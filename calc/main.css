@@ -1,0 +1,49 @@
+body {
+  color: #000000 !important;
+  background-image: url('https://www.teahub.io/photos/full/2-22024_3d-wallpaper-download-blue-orange-yellow-background.jpg');
+  z-index: 2;
+}
+
+.main-box {
+  height: 50%;
+  width: 40%;
+  padding: 10px;
+}
+
+.btn {
+  width: 60px !important;
+}
+
+.dd {
+
+  position: absolute;
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+
+  display: flex;
+  align-items: center;
+}
+
+strong {
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 3px 8px 8px rgba(88,206,121,0);
+}
+
+#result {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.box {
+  margin: 5px;
+  font-size: xxx-large;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  z-index: 50;
+  background-color: rgba(236, 235, 235, 0.75);
+}
+
+.btn {
+  width: 80px;
+  height: 60px;
+  color: #333333;
+  font-size: xx-large;
+}

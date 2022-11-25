@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/me.jpg">
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Данные карты</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="payModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">Данные карты</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary header">
+      <div class="container-fluid header-container">
+        <a class="navbar-brand" href="index.html">Интернет-магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="me.html">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Товары</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Разделы
+              </a>
+              <ul class="dropdown-menu">
+                <li><span class="dropdown-item">Одежда</span></li>
+                <li><span class="dropdown-item">Игрушки</span></li>
+                <li><span class="dropdown-item">Еда</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><span class="dropdown-item">Лекарства</span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 style="padding-left: 10px" class="text-center">Все товары</h1><br>
+
+  <div class="row row-cols-3 text-center" style="width: 100%">
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem;">
+            <img src="img/me.jpg" class="card-img-top" alt="me">
+            <div class="card-body">
+                <h5 class="card-title">Медведь</h5>
+                <p class="card-text">просто грустящий медведь, который съест свой амлет<br>
+                <span class="text-muted">999 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('999')" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="img/img.png" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Шоковое видео!!!</h5>
+                <p class="card-text">Шок контент!!!! Скорее смотри!!! Человек выбросил телефон девушки!!!!!<br>
+                <span class="text-muted">5 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('5', 'https://youtu.be/TkLzP3ZiCjg');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="https://sun9-56.userapi.com/impf/NprgdwEBR_ESFOtprEFz3nMnFHCxwusTR1YTdQ/BepOUVT6z0k.jpg?size=595x604&quality=96&sign=e7d31c16c4b1d12fde96e8fe2a78dcfa&type=album" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Код активации майнкрафт</h5>
+                <p class="card-text">Код активации майнкрафт всего за<br>
+                <span class="text-muted">10 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('10', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="https://static.daru-dar.org/s1024/02/02/54/c5/54c5c1aff1855d4adc2ddd18ede30c5655fb95a0.JPG" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Пакет одежды</h5>
+                <p class="card-text">просто пакет с кучей одежды<br>
+                <span class="text-muted">8000 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('8000', '$Покупа удалась, ожидайте. Она приедет по вашему IP-адресу');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="img/papazov.jpg" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Секретное фото Вовы Папазова!!!!</h5>
+                <p class="card-text">фотка Вовы Папазова!!!<br>
+                <span class="text-muted">10000 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('10000', '$вас заскамили на деньги!');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="https://avatars.mds.yandex.net/i?id=78b1c5ed4b3c8923103d2bffcc9c8b23ea4db2e7-3917045-images-thumbs&n=13" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Пакет с сюрпризом</h5>
+                <p class="card-text">сЮРПРИз!!!<br>
+                <span class="text-muted">100000000000 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('100000000000', '$NO');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="https://kartinkin.net/uploads/posts/2021-08/1627782047_14-kartinkin-com-p-mnogo-vkusnoi-yedi-yeda-krasivo-foto-16.jpg" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Куча еды</h5>
+                <p class="card-text">куча еды<br>
+                <span class="text-muted">11 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('11', '$на ваш компьютер проник вирус! Срочно');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+    <div class="col d-flex justify-content-center product">
+        <div class="card" style="width: 22rem; height: 25rem;">
+            <img src="https://d2vvqscadf4c1f.cloudfront.net/s9ZPwN13SguAWOPnsT6u_null-21.jpg" class="card-img-top" alt="me" height="50%">
+            <div class="card-body">
+                <h5 class="card-title">Null</h5>
+                <p class="card-text">Null<br>
+                <span class="text-muted">10 руб.</span></p>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1" onclick="pay('*)#(&@%(()&$)*&#($^&)%*&)(^&', '$ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>ERROR<br>');" class="btn btn-primary">Купить</button>
+            </div>
+      </div>
+    </div>
+
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
